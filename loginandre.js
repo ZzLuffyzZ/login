@@ -1,39 +1,33 @@
-/*let userArray=[];
-let emailArray=[];
-let passwordArray=[];
-let phoneArray=[];
-let addressArray=[];*/
-
-/*const baseApi = "https://sheetdb.io/api/v1/8o4oft8zssb8k";
-
-const fetchUser = async () => {
-  const result = await axios.get(baseApi);
-  if (result.status === 200) {
-    return result.data;
-  }
-  return [];
-};
-
-const fetchUserBy = async (search) => {
-  const result = await axios.get(`${baseApi}/search?` + search);
-  if (result.status === 200) {
-    return result.data;
-  }
-  return [];
-};
-
-const postUser = async (user) => {
-  return await axios.post(`${baseApi}?sheet=user`, user);
-};
-
-const removeClass = (element, className) => {
-    element.classList.remove(className);
-  };
-  
-  const addClass = (element, className) => {
-    element.classList.add(className);
-  };    
-*/
+let listuser = [
+    {   id:1,
+        emailuser:"username1@gmail.com",
+        user: "username1",
+        pass: "123tnvn",
+        addressuser: "gfjhsafkjsd",
+        userphone: "0123456789",
+        role: "user"},
+    {   id:2,
+        emailuser:"username2@gmail.com",
+        usere: "username2",
+        pass: "123tnvn1",
+        addressuser: "gfjhsafkjsd",
+        userphone: "0123456786",
+        role:"user"},
+    {   id:3,
+        emailuseremail:" username3@gmail.com",
+        user: "username3",
+        pass: "123tnvn2",
+        addressuser: "gfjhsafkjsd",
+        userphone: "0123456787",
+        role:"user" },
+    {   id:4,
+        emailuseremail:" username4@gmail.com",
+        user: "username4",
+        pass: "123tnvn3",
+        addressuser: "gfjhsafkjsd",
+        userphone: "0123456788",
+        role:"user"},
+]
 
 let loginBox = document.getElementById("login");
 let regBox = document.getElementById("register");
@@ -44,17 +38,22 @@ let loginTab = document.getElementById("lt");
 let regTab = document.getElementById("rt");
 
 
-
-
-function register(){
-    event.preventDefault();
-
-    let email = document.getElementById("re").value;
+let email = document.getElementById("re").value;
     let password = document.getElementById("rp").value;
     let passwordRetype = document.getElementById("rrp").value;
     let username = document.getElementById("un").value; 
     let address = document.getElementById("address").value; 
     let phone = document.getElementById("phone").value;
+
+function register(){
+    event.preventDefault();
+    let inputuser = {id:"",
+                     username:"",
+                     password:"",
+                     phone:"",
+                     role:"user",
+                    }
+    
     if (email == ""){
         alert("Email required.");
         return ;
@@ -87,11 +86,8 @@ function register(){
     }
     
     if(emailArray.indexOf(email) == -1){
-        userArray.push(username);
-        emailArray.push(email);
-        passwordArray.push(password);
-        phoneArray.push(phone);
-        addressArray.push(address);
+        listuser.push(inputuser);
+        
         
         alert(email + "  Thanks for registration. \nTry to login Now");
         
@@ -112,9 +108,6 @@ function register(){
 function login(){
     event.preventDefault();
 
-    let email = document.getElementById("se").value;
-    let password = document.getElementById("sp").value;
-
     let i = emailArray.indexOf(email);
 
     if(emailArray.indexOf(email) == -1){
@@ -133,9 +126,13 @@ function login(){
         alert("Password does not match.");
         return ;
     }
-    else {
-        alert(email + " yor are login Now \n welcome to our website.");
-
+    else if( role = "user"){
+        alert( "helo user")
+        document.getElementById("se").value ="";
+        document.getElementById("sp").value="";
+    }
+    else if( role = "hotel"){
+        alert("helo hotel");
         document.getElementById("se").value ="";
         document.getElementById("sp").value="";
         return ;
@@ -159,6 +156,3 @@ function forgot(){
     alert("email is send to your email check it in 24hr. \n Thanks");
     document.getElementById("fe").value ="";
 }
-
-console.log(userArray);
-
