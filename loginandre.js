@@ -37,20 +37,22 @@ let forgetBox = document.getElementById("forgot");
 let loginTab = document.getElementById("lt");
 let regTab = document.getElementById("rt");
 
+function register(){
+    event.preventDefault();
 
-let email = document.getElementById("re").value;
+    let email = document.getElementById("re").value;
     let password = document.getElementById("rp").value;
     let passwordRetype = document.getElementById("rrp").value;
     let username = document.getElementById("un").value; 
     let address = document.getElementById("address").value; 
     let phone = document.getElementById("phone").value;
-
-function register(){
-    event.preventDefault();
+    
     let inputuser = {id:"",
+                     email:"",
                      username:"",
                      password:"",
                      phone:"",
+                     address:"",
                      role:"user",
                     }
     
@@ -108,9 +110,12 @@ function register(){
 function login(){
     event.preventDefault();
 
-    let i = emailArray.indexOf(email);
+    let email = document.getElementById("re").value;
+    let password = document.getElementById("rp").value;
 
-    if(emailArray.indexOf(email) == -1){
+    let i = listuser.indexOf(email);
+
+    if(listuser.indexOf(email) == -1){
         if (email == ""){
             alert("Email required.");
             return ;
@@ -118,7 +123,7 @@ function login(){
         alert("Email does not exist.");
         return ;
     }
-    else if(passwordArray[i] != password){
+    else if(listuser.indexOf(password) == -1){
         if (password == ""){
             alert("Password required.");
             return ;
@@ -142,9 +147,9 @@ function login(){
 function forgot(){
     event.preventDefault();
 
-    var email = document.getElementById("fe").value;
+    let email = document.getElementById("fe").value;
 
-    if(emailArray.indexOf(email) == -1){
+    if(listuser.indexOf(email) == -1){
         if (email == ""){
             alert("Email required.");
             return ;
