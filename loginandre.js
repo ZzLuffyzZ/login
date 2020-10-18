@@ -1,5 +1,3 @@
-
-  
 let listuser = [
     {   id:1,
         emailuser:"username1@gmail.com",
@@ -38,6 +36,10 @@ let forgetBox = document.getElementById("forgot");
 
 let loginTab = document.getElementById("lt");
 let regTab = document.getElementById("rt");
+for(let i=0;i<listuser.length;i++){
+    userArray=[];
+    userArray.push(listuser[i][`user`]);
+}
 
 function register(){
     event.preventDefault();
@@ -90,6 +92,7 @@ function register(){
     }
     
     if(emailArray.indexOf(email) == -1){
+        id = listuser.length;
         listuser.push(inputuser);
         
         
@@ -109,13 +112,21 @@ function register(){
         return ;
     }
 }
+    for(let i=0;i<listuser.length;i++){
+            emailArray=[];
+            emailArray.push(listuser[i][`emailuser`]);
+        }
+    for( let i=0;i<listuser.length;i++){
+            passwordArray=[];
+            passwordArray.push(listuser[i][`pass`]);
+    }
 function login(){
     event.preventDefault();
 
     let email = document.getElementById("re").value;
     let password = document.getElementById("rp").value;
-    emailArray = listuser[`emailuser`];
-    passwordArray = listuser[`pass`];
+    
+   
     let i = emailArray.indexOf(email);
 
     if(emailArray.indexOf(email) == -1){
@@ -151,8 +162,7 @@ function forgot(){
     event.preventDefault();
 
     let email = document.getElementById("fe").value;
-    emailArray = listuser[`emailuser`];
-    if(listuser.indexOf(email) == -1){
+    if(emailArray.indexOf(email) == -1){
         if (email == ""){
             alert("Email required.");
             return ;
@@ -160,7 +170,6 @@ function forgot(){
         alert("Email does not exist.");
         return ;
     }
-
-    alert("email is send to your email check it in 24hr. \n Thanks");
+    else{alert("email is send to your email check it in 24hr. \n Thanks");}
     document.getElementById("fe").value ="";
 }
