@@ -1,3 +1,5 @@
+
+  
 let listuser = [
     {   id:1,
         emailuser:"username1@gmail.com",
@@ -112,10 +114,11 @@ function login(){
 
     let email = document.getElementById("re").value;
     let password = document.getElementById("rp").value;
+    emailArray = listuser[`emailuser`];
+    passwordArray = listuser[`pass`];
+    let i = emailArray.indexOf(email);
 
-    let i = listuser.indexOf(email);
-
-    if(listuser.indexOf(email) == -1){
+    if(emailArray.indexOf(email) == -1){
         if (email == ""){
             alert("Email required.");
             return ;
@@ -123,7 +126,7 @@ function login(){
         alert("Email does not exist.");
         return ;
     }
-    else if(listuser.indexOf(password) == -1){
+    else if(passwordArray[i] == -1){
         if (password == ""){
             alert("Password required.");
             return ;
@@ -148,7 +151,7 @@ function forgot(){
     event.preventDefault();
 
     let email = document.getElementById("fe").value;
-
+    emailArray = listuser[`emailuser`];
     if(listuser.indexOf(email) == -1){
         if (email == ""){
             alert("Email required.");
