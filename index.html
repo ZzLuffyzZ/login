@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <!-- import md bootstrap -->
+    <link rel="stylesheet" href="./css/md-bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/md-bootstrap/mdb.min.css" />
+    <link rel="stylesheet" href="./css/md-bootstrap/style.css" />
+    <!-- your css -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- your js -->
+    <script src="./js/logindb.js"></script>
+    <script defer src="./js/event.js"></script>
+    <script src="./js/index.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div id="login-page">
+            <div id="sign-in-screen">
+                <div class="text-center border border-light p-5 container">
+                    
+                    <!-- user name -->
+                    <input id="username-field" type="text" class="form-control mb-4" name="user name"
+                        placeholder="E-mail" />
+                    <!-- Password -->
+                    <input id="password-field" type="password" class="form-control mb-4" name="password"
+                        placeholder="Password" />
+                    <div class="d-flex justify-content-around">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember" />
+                            <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                        </div>
+                        <a href="">Forgot password?</a>
+                    </div>
+                    
+                    <!-- Sign in button -->
+                    <button id="login-form-submit" class="btn btn-info btn-block my-4">Sign in</button>
+                    <!-- Register -->
+                    <span>
+                        Not a member?
+                        <a id="btn-sign-up" href="#">Register</a>
+                    </span>
+                    <!-- Social login -->
+                    <p>or sign in with:</p>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+                </div>
+            </div>
+            <div id="sign-up-screen" class="d-none">
+                <div class="text-center border border-light p-5">
+                    <p class="h4 mb-4">Sign up</p>
+
+                    <input id="re-username-input" type="text" class="form-control mb-4" placeholder="Username" />
+                    <!-- E-mail -->
+                    <input id="re-email-input" type="email" class="form-control mb-4" placeholder="E-mail" />
+                    <!-- Phone number -->
+                    <input id="re-phone-input" type="text" class="form-control mb-4" placeholder="Phone number"
+                        aria-describedby="defaultRegisterFormPhoneHelpBlock" />
+                    <!-- Password -->
+                    <input id="re-password-input" type="password" class="form-control mb-4" placeholder="Password"
+                        aria-describedby="defaultRegisterFormPasswordHelpBlock" />
+                    <!-- <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                        At least 8 characters and 1 digit
+                    </small> -->
+                    <!-- Password -->
+                    <input id="re-rePassword-input" type="password" class="form-control" placeholder="Re-password"
+                        aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    <!-- <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                        At least 8 characters and 1 digit
+                    </small> -->
+
+                    <!-- <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                        Optional - for two step authentication
+                    </small> -->
+                    <!-- Newsletter -->
+                    <!-- <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
+                        <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our
+                            newsletter</label>
+                    </div> -->
+                    <!-- Sign up button -->
+                    <button id="btn-signup-submit" class="btn btn-info my-4 btn-block">Sign up</button>
+                    <!-- Social register -->
+                    <p>or sign up with: <span><button onclick="redirectSignupToSignInScreen()">Your
+                                account</button></span>
+                    </p>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+                    <hr>
+                    <!-- Terms of service -->
+                    <p>By clicking
+                        <em>Sign up</em> you agree to our
+                        <a href="" target="_blank">terms of service</a>
+                </div>
+            </div>
+
+        </div>
+        <div id="user-page"></div>
+        <div id="hotel-page"></div>
+    </main>
+
+    <script src="./js/element.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/render.js"></script>
+    <script src="./js/validate.js"></script>
+
+</body>
+
+</html>
